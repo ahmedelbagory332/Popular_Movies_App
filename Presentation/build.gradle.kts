@@ -1,7 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -32,6 +35,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+    buildFeatures {
+        compose = true
     }
 }
 
@@ -68,5 +74,6 @@ dependencies {
     implementation(libs.coil.compose)
     // LiveData
     implementation(libs.lifecycle.livedata.ktx)
-
+    //serialization
+    implementation(libs.kotlinx.serialization.json)
 }
