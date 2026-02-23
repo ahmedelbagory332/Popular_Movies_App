@@ -58,13 +58,18 @@ class MovieViewModel @Inject constructor(
 
                 is NetWorkCall.Error -> _state.value.copy(
                     error = result.message ?: "An unexpected error happened",
+                    movies = emptyList(),
                     isLoading = false,
                     loadFinished = true,
                     isRefreshing = false
                 )
 
                 is NetWorkCall.Loading -> {
-                    if (forceReload) _state.value.copy(isLoading = true) else _state.value
+                    if (forceReload) _state.value.copy(
+                        isLoading = true,
+                        error = "",
+                        movies = emptyList(),
+                    ) else _state.value
                 }
 
             }

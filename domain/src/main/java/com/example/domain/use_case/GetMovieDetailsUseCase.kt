@@ -1,15 +1,15 @@
 package com.example.domain.use_case
 
 import com.example.domain.BaseUseCase
-import com.example.domain.models.GenreModel
 import com.example.domain.models.MovieDetailsModel
 import com.example.domain.repository.MovieRepository
+import javax.inject.Inject
 
-class GetMovieDetailsUseCase(
+class GetMovieDetailsUseCase @Inject constructor(
     private val repository: MovieRepository
-) : BaseUseCase<MovieDetailsModel, String>() {
+) : BaseUseCase<MovieDetailsModel, Long>() {
 
-    override suspend fun execute(params: String): MovieDetailsModel {
-        return repository.getMovieDetails(movieId = params)
+    override suspend fun execute(params: Long): MovieDetailsModel {
+        return repository.getMovieDetails(movieId = params.toString())
     }
 }

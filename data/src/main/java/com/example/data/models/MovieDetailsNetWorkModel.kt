@@ -53,6 +53,7 @@ data class BelongsToCollection(
     @field:Json(name = "backdrop_path")
     val backdropPath: String?,
 )
+
 @JsonClass(generateAdapter = true)
 data class ProductionCompanyDto(
     val id: Long,
@@ -76,5 +77,16 @@ data class SpokenLanguage(
     val englishName: String?,
     @field:Json(name = "iso_639_1")
     val iso6391: String?,
+    val name: String?,
+)
+
+@JsonClass(generateAdapter = true)
+data class GenreNetWorkModel(
+    val genres: ArrayList<GenreItemNetWorkModel>?,
+)
+
+@JsonClass(generateAdapter = true)
+data class GenreItemNetWorkModel(
+    val id: Long,
     val name: String?,
 )
