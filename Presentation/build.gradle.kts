@@ -65,11 +65,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     // Hilt
     implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
     ksp(libs.hilt.compiler)
-    //paging
-    implementation(libs.androidx.paging.runtime.ktx)
-    implementation(libs.androidx.paging.common.ktx)
-    implementation(libs.androidx.paging.compose)
     // Coil
     implementation(libs.coil.compose)
     implementation(libs.coil.gif)

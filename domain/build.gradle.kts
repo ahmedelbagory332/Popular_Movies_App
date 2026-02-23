@@ -15,7 +15,6 @@ kotlin {
 dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.javax.inject)
-    implementation(libs.androidx.paging.common.ktx)
     //serialization
     implementation(libs.kotlinx.serialization.json)
 }

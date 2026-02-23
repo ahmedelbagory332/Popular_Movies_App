@@ -41,7 +41,9 @@ fun App() {
             )
         }
         composable<Destinations.MovieListScreen> {
-            MovieScreen()
+            MovieScreen{ movie ->
+                navController.navigate(Destinations.MovieDetailScreen(movie.id))
+            }
         }
     }
 }

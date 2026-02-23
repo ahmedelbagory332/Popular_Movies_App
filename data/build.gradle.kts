@@ -15,8 +15,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-        val tmdbApiKey: String = project.findProperty("TMDB_API_KEY") as? String ?: ""
+        val tmdbApiKey =  "3db2c1d15b330e8595099a2bab78dce2"
+        val imageBaseUrl = "https://image.tmdb.org/t/p/original/"
         buildConfigField("String", "TMDB_API_KEY", "\"$tmdbApiKey\"")
+        buildConfigField("String", "IMAGE_BASE_URL", "\"$imageBaseUrl\"")
     }
 
     buildTypes {

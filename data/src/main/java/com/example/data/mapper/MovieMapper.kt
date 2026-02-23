@@ -1,5 +1,6 @@
 package com.example.data.mapper
 
+import com.example.data.BuildConfig
 import com.example.data.models.GenreItemNetWorkModel
 import com.example.data.models.GenreNetWorkModel
 import com.example.data.models.MovieDetailsNetWorkModel
@@ -15,26 +16,28 @@ import com.example.domain.models.ProductionCompany
 
 fun GenreNetWorkModel.toModel(): GenreModel =
     GenreModel(
-        genres = genres.map { it.toModel() }
+        genres = genres?.map { it.toModel() } ?: emptyList()
     )
 
 fun GenreItemNetWorkModel.toModel(): GenreItemModel =
     GenreItemModel(
         id = id,
-        name = name
+        name = name ?: ""
     )
 
 fun MovieItemNetworkModel.toModel(): MovieItem =
     MovieItem(
         id = id,
-        posterUrl = posterPath,
-        backdropUrl = backdropPath,
-        name = title,
+        posterUrl =  BuildConfig.IMAGE_BASE_URL + posterPath,
+        backdropUrl = BuildConfig.IMAGE_BASE_URL + backdropPath,
+        name = title ?: "",
+        date = releaseDate ?: "",
+        rate = voteAverage ?: 0.0
     )
 
 fun MovieNetworkModel.toModel(): MovieModel =
     MovieModel(
-        moveList = movieList.map { it.toModel() },
+        moveList = movieList?.map { it.toModel() } ?: emptyList(),
         page = page,
         totalPages = totalPages,
         totalResults = totalResults
@@ -43,20 +46,20 @@ fun MovieNetworkModel.toModel(): MovieModel =
 fun MovieDetailsNetWorkModel.toModel(): MovieDetailsModel =
     MovieDetailsModel(
         id = id,
-        posterUrl = posterPath,
+        posterUrl = BuildConfig.IMAGE_BASE_URL + posterPath,
         name = title,
         tagline = tagline,
         releaseDate = releaseDate,
         runtime = runtime,
         overview = overview,
         genres = genres.map { it.toModel() },
-        productionCompanies = productionCompanies.map { it.toModel() },
+        productionCompanies = productionCompanies?.map { it.toModel() },
     )
 
 fun ProductionCompanyDto.toModel(): ProductionCompany =
     ProductionCompany(
         id = id,
-        logoPath = logoPath,
-        name = name,
-        originCountry = originCountry
+        logoPath = BuildConfig.IMAGE_BASE_URL + logoPath,
+        name = name ?: "",
+        originCountry = originCountry ?: ""
     )

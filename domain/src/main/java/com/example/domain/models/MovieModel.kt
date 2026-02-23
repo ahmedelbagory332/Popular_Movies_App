@@ -9,7 +9,9 @@ data class MovieModel(
 
 data class MovieItem(
     val id: Long = 0L,
-    val posterUrl: String? = "",
+    val posterUrl: String = "",
     val backdropUrl: String = "",
     val name: String = "",
+    val date: String = "",
+    val rate: Double = 0.0,
 )

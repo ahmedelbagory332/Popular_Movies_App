@@ -10,5 +10,5 @@ sealed class Destinations {
     data object MovieListScreen : Destinations()
 
     @Serializable
-    data class MovieDetailScreen(val id: String) : Destinations()
+    data class MovieDetailScreen(val id: Long) : Destinations()
 }

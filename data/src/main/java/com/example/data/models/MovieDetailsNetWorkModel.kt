@@ -5,76 +5,76 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class MovieDetailsNetWorkModel(
-    val adult: Boolean,
+    val adult: Boolean?,
     @field:Json(name = "backdrop_path")
-    val backdropPath: String,
+    val backdropPath: String?,
     @field:Json(name = "belongs_to_collection")
-    val belongsToCollection: BelongsToCollection,
-    val budget: Long,
+    val belongsToCollection: BelongsToCollection?,
+    val budget: Long?,
     val genres: List<GenreItemNetWorkModel>,
-    val homepage: String,
+    val homepage: String?,
     val id: Long,
     @field:Json(name = "imdb_id")
-    val imdbId: String,
+    val imdbId: String?,
     @field:Json(name = "original_language")
-    val originalLanguage: String,
+    val originalLanguage: String?,
     @field:Json(name = "original_title")
-    val originalTitle: String,
-    val overview: String,
-    val popularity: Double,
+    val originalTitle: String?,
+    val overview: String?,
+    val popularity: Double?,
     @field:Json(name = "poster_path")
-    val posterPath: String,
+    val posterPath: String?,
     @field:Json(name = "production_companies")
-    val productionCompanies: List<ProductionCompanyDto>,
+    val productionCompanies: List<ProductionCompanyDto>?,
     @field:Json(name = "production_countries")
-    val productionCountries: List<ProductionCountry>,
+    val productionCountries: List<ProductionCountry>?,
     @field:Json(name = "release_date")
-    val releaseDate: String,
-    val revenue: Long,
-    val runtime: Long,
+    val releaseDate: String?,
+    val revenue: Long?,
+    val runtime: Long?,
     @field:Json(name = "spoken_languages")
-    val spokenLanguages: List<SpokenLanguage>,
-    val status: String,
-    val tagline: String,
-    val title: String,
-    val video: Boolean,
+    val spokenLanguages: List<SpokenLanguage>?,
+    val status: String?,
+    val tagline: String?,
+    val title: String?,
+    val video: Boolean?,
     @field:Json(name = "vote_average")
-    val voteAverage: Double,
+    val voteAverage: Double?,
     @field:Json(name = "vote_count")
-    val voteCount: Long,
+    val voteCount: Long?,
 )
 
 @JsonClass(generateAdapter = true)
 data class BelongsToCollection(
     val id: Long,
-    val name: String,
+    val name: String?,
     @field:Json(name = "poster_path")
-    val posterPath: String,
+    val posterPath: String?,
     @field:Json(name = "backdrop_path")
-    val backdropPath: String,
+    val backdropPath: String?,
 )
 @JsonClass(generateAdapter = true)
 data class ProductionCompanyDto(
     val id: Long,
     @field:Json(name = "logo_path")
-    val logoPath: String? = null,
-    val name: String,
+    val logoPath: String?? = null,
+    val name: String?,
     @field:Json(name = "origin_country")
-    val originCountry: String,
+    val originCountry: String?,
 )
 
 @JsonClass(generateAdapter = true)
 data class ProductionCountry(
     @field:Json(name = "iso_3166_1")
-    val iso31661: String,
-    val name: String,
+    val iso31661: String?,
+    val name: String?,
 )
 
 @JsonClass(generateAdapter = true)
 data class SpokenLanguage(
     @field:Json(name = "english_name")
-    val englishName: String,
+    val englishName: String?,
     @field:Json(name = "iso_639_1")
-    val iso6391: String,
-    val name: String,
+    val iso6391: String?,
+    val name: String?,
 )
