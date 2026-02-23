@@ -1,6 +1,8 @@
 package com.example.popularmovies.di
 
 import com.example.data.api.MovieApi
+import com.example.data.repositoryImpl.MovieRepositoryImpl
+import com.example.domain.repository.MovieRepository
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -30,4 +32,11 @@ object NetworkModule {
     @Singleton
     fun provideMoviesApi(retrofit: Retrofit): MovieApi =
         retrofit.create(MovieApi::class.java)
+
+    @Provides
+    @Singleton
+    fun movieRepository(
+        api: MovieApi,
+    ): MovieRepository =
+        MovieRepositoryImpl(api)
 }
