@@ -55,7 +55,7 @@ import kotlinx.coroutines.launch
             state = gridState,
             columns = GridCells.Fixed(2),
             content = {
-                items(movies, key = { "${it.id}" }) { movie ->
+                items(movies, key = { "${it.id} ${System.currentTimeMillis()}" }) { movie ->
                     MovieCard(movie = movie) {
                         onMovieClick(movie)
                     }
