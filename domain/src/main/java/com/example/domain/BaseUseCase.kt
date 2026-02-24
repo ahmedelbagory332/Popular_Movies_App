@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.flow
 
 abstract class BaseUseCase<Type, Params> {
 
-    protected abstract suspend fun execute(params: Params): Type
+    abstract suspend fun execute(params: Params): Type
 
     operator fun invoke(params: Params): Flow<NetWorkCall<Type>> = flow {
         emit(NetWorkCall.Loading())

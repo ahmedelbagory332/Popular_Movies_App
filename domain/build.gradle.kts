@@ -17,4 +17,8 @@ dependencies {
     implementation(libs.javax.inject)
     //serialization
     implementation(libs.kotlinx.serialization.json)
+    testImplementation(libs.junit)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.coroutines.test)
 }
