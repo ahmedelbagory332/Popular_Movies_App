@@ -49,6 +49,7 @@ class MovieViewModel @Inject constructor(
                     currentPage++
                     _state.value.copy(
                         movies = list,
+                        allMovies = list,
                         loadFinished = newMovies.isEmpty(),
                         isLoading = false,
                         isRefreshing = false,
@@ -79,7 +80,12 @@ class MovieViewModel @Inject constructor(
 
     private fun onSearchChanged(search: String) {
         _state.value = _state.value.copy(search = search)
-        val filteredMovies = _state.value.movies.filter { it.name.contains(search) }
+        val currentAllMovies = _state.value.allMovies
+        val filteredMovies = if (search.isEmpty()) {
+            currentAllMovies
+        } else {
+            currentAllMovies.filter { it.name.contains(search, ignoreCase = true) }
+        }
         _state.value = _state.value.copy(
             movies = filteredMovies,
             isLoading = false,

@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.Indicator
@@ -55,7 +55,10 @@ import kotlinx.coroutines.launch
             state = gridState,
             columns = GridCells.Fixed(2),
             content = {
-                items(movies, key = { "${it.id} ${System.currentTimeMillis()}" }) { movie ->
+                itemsIndexed(
+                    items = movies,
+                    key = { index, movie -> "${movie.id}_$index" }
+                ) { _, movie ->
                     MovieCard(movie = movie) {
                         onMovieClick(movie)
                     }
