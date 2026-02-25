@@ -1,4 +1,4 @@
-package com.example.core_domain.base
+package com.example.core_domain
 
 sealed class NetWorkCall <T>(val data: T? = null, val message: String? = null) {
     class Success<T>(data: T) : NetWorkCall<T>(data)

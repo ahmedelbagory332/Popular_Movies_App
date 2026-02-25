@@ -1,5 +1,6 @@
 package com.example.core_domain.base
 
+import com.example.core_domain.NetWorkCall
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

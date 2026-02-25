@@ -8,4 +8,5 @@ sealed class MovieIntent() : ViewIntent {
     class OnSearchChanged(val search: String) : MovieIntent()
     class UpdateIsRefreshing(val isRefreshing: Boolean) : MovieIntent()
     object ClearSearch : MovieIntent()
+    object OnRefreshing : MovieIntent()
 }

@@ -10,7 +10,6 @@ import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.Indicator
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -18,7 +17,6 @@ import com.example.design_system.components.LoadingIndicator
 import com.example.domain.models.MovieItem
 import com.example.presentation.MovieIntent
 import com.example.presentation.MovieViewModel
-import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -31,15 +29,11 @@ import kotlinx.coroutines.launch
     loadFinished: Boolean
 ) {
     val rememberPullToRefreshState = rememberPullToRefreshState()
-    val coroutineScope = rememberCoroutineScope()
     PullToRefreshBox(
         isRefreshing = isRefreshing,
         state = rememberPullToRefreshState,
         onRefresh = {
-            viewModel.sendIntent(MovieIntent.UpdateIsRefreshing(isRefreshing = true))
-            coroutineScope.launch {
-                viewModel.sendIntent(MovieIntent.GetMovies(forceReload = true))
-            }
+            viewModel.sendIntent(MovieIntent.OnRefreshing)
         },
         indicator = {
             Indicator(

@@ -1,7 +1,7 @@
 package com.example.presentation
 
 import app.cash.turbine.test
-import com.example.core_domain.base.NetWorkCall
+import com.example.core_domain.NetWorkCall
 import com.example.domain.models.MovieItem
 import com.example.domain.models.MovieModel
 import com.example.domain.use_case.GetMoviesUseCase

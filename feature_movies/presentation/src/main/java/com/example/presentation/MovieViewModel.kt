@@ -2,7 +2,7 @@ package com.example.presentation
 
 import androidx.lifecycle.viewModelScope
 import com.example.core.base.BaseViewModel
-import com.example.core_domain.base.NetWorkCall
+import com.example.core_domain.NetWorkCall
 import com.example.domain.use_case.GetMoviesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
@@ -28,6 +28,10 @@ class MovieViewModel @Inject constructor(
             is MovieIntent.OnSearchChanged -> onSearchChanged(intent.search)
             is MovieIntent.ClearSearch -> clearSearch()
             is MovieIntent.UpdateIsRefreshing -> updateIsRefreshing(intent.isRefreshing)
+            is MovieIntent.OnRefreshing -> {
+                updateIsRefreshing(true)
+                getMovies(forceReload = true)
+            }
         }
     }
 
@@ -71,11 +75,14 @@ class MovieViewModel @Inject constructor(
                 }
 
                 is NetWorkCall.Loading -> {
-                    if (forceReload) state.value.copy(
-                        isLoading = true,
-                        error = "",
-                        movies = emptyList(),
-                    ) else state.value
+                    if (forceReload)
+                        updateState {
+                            it.copy(
+                                isLoading = true,
+                                error = "",
+                                movies = emptyList(),
+                            )
+                        }
                 }
             }
         }.launchIn(viewModelScope)

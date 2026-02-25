@@ -64,6 +64,8 @@ dependencies {
     implementation(project(":design-system"))
     implementation(project(":feature_movies:presentation"))
     implementation(project(":feature_movies:data"))
+    implementation(project(":feature_movie_details:presentation"))
+    implementation(project(":feature_movie_details:data"))
     // Retrofit + Moshi
     implementation(libs.retrofit)
     implementation(libs.retrofit.moshi)

@@ -1,6 +1,6 @@
 package com.example.domain
 
-import com.example.core_domain.base.NetWorkCall
+import com.example.core_domain.NetWorkCall
 import com.example.domain.repository.MovieRepository
 import com.example.domain.use_case.GetMoviesUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
