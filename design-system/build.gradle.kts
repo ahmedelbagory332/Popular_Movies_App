@@ -61,5 +61,7 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     //systemuicontroller
     implementation(libs.accompanist.systemuicontroller)
-
+    // Coil
+    implementation(libs.coil.compose)
+    implementation(libs.coil.gif)
 }

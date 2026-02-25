@@ -1,5 +1,6 @@
 package com.example.core.network.api
 
+import com.example.core.BuildConfig
 import com.example.core.network.models.MovieDetailsNetWorkModel
 import com.example.core.network.models.MovieNetworkModel
 import retrofit2.http.GET

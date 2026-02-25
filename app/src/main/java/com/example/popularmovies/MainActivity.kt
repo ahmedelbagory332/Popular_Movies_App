@@ -9,9 +9,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.popularmovies.navigation.ScreenDestinations
-import com.example.presentation.screens.movie_details_screen.MovieDetailsScreen
-import com.example.presentation.screens.movies_screen.MovieScreen
 import com.example.popularmovies.splash_screen.SplashScreen
+import com.example.presentation.MovieScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -42,14 +41,14 @@ fun App() {
             )
         }
         composable<ScreenDestinations.MovieListScreen> {
-            MovieScreen { movie ->
-                navController.navigate(ScreenDestinations.MovieDetailScreen(movie.id))
+            MovieScreen { id ->
+                navController.navigate(ScreenDestinations.MovieDetailScreen(id))
             }
         }
-        composable<ScreenDestinations.MovieDetailScreen> {
-            MovieDetailsScreen {
-                navController.popBackStack()
-            }
-        }
+//        composable<ScreenDestinations.MovieDetailScreen> {
+//            MovieDetailsScreen {
+//                navController.popBackStack()
+//            }
+//        }
     }
 }

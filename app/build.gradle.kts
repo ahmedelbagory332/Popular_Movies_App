@@ -60,9 +60,10 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-    implementation(project(":data"))
-    implementation(project(":domain"))
-    implementation(project(":Presentation"))
+    implementation(project(":core"))
+    implementation(project(":design-system"))
+    implementation(project(":feature_movies:presentation"))
+    implementation(project(":feature_movies:data"))
     // Retrofit + Moshi
     implementation(libs.retrofit)
     implementation(libs.retrofit.moshi)

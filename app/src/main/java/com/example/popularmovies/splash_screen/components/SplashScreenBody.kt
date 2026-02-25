@@ -16,8 +16,8 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.decode.GifDecoder
 import coil.request.ImageRequest
-import com.example.popularmovies.R
-import com.example.presentation.ui.theme.PurpleGrey40
+import com.example.design_system.colors.PurpleGrey40
+import com.example.design_system.R
 
 @Composable
 fun SplashScreenBody(

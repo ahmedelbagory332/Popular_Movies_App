@@ -12,8 +12,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import com.example.presentation.ui.theme.Pink80
-import com.example.presentation.ui.theme.PurpleGrey80
+import com.example.design_system.colors.Pink80
+import com.example.design_system.colors.PurpleGrey80
 
 
 @Composable

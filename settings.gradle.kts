@@ -21,8 +21,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "Popular Movies"
 include(":app")
-include(":data")
-include(":domain")
-include(":Presentation")
 include(":core")
 include(":design-system")
+include(":feature_movies")
+include(":feature_movies:presentation")
+include(":feature_movies:data")
+include(":feature_movies:domain")
+include(":core-domain")
