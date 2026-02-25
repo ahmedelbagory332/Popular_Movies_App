@@ -1,4 +1,4 @@
-package com.example.presentation.screens.splash_screen.components
+package com.example.popularmovies.splash_screen.components
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween

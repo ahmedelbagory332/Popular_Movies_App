@@ -1,4 +1,4 @@
-package com.example.presentation.screens.splash_screen.components
+package com.example.popularmovies.splash_screen.components
 
 import android.content.Context
 import androidx.compose.foundation.background
@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.decode.GifDecoder
 import coil.request.ImageRequest
-import com.example.presentation.R
+import com.example.popularmovies.R
 import com.example.presentation.ui.theme.PurpleGrey40
 
 @Composable
